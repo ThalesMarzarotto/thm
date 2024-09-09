@@ -1,0 +1,127 @@
+.main{
+    overflow-x: hidden;
+    position: relative;
+    
+}
+
+.container{
+    display:flex;
+    width: max-content;
+    height: 100%;
+    flex-direction:row;
+    align-items: center;
+   position: relative;
+    overflow: hidden;
+    scrollbar-width: 0;
+    background-color: black;
+    transition: transform 0.5s
+
+}
+
+.imageContainer{
+ width: inherit;
+ height: inherit;
+
+}
+
+.image {
+    object-fit: cover;
+    user-select:text;
+    position: relative;
+    z-index: -19;
+    
+}
+
+
+.sensibleWrapper{
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.sensibleText {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.sensibleControler{
+    position: absolute;
+    bottom:5px;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background-color:white;
+    color: black;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.imageBlur {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backdrop-filter: blur(10px);
+    
+}
+
+.controlerButton {
+    position: absolute;
+    bottom: 5px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 2px;
+    border-radius: 7px;
+    right: 5px;
+    transform: rotateZ(-45deg);
+    border:1px solid white;
+    color: white;
+}
+.numberDisplay {
+    position: absolute;
+   top: 5px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 2px;
+    border-radius: 7px;
+    right: 5px;
+    color: white;
+    border:1px solid white
+
+}
+
+
+
+.arrowLeft {
+ position: absolute;
+ left: 0;
+ top: 50%;
+ background-color: rgba(0, 0, 0, 0.8) ;
+ font-size: 20px;
+
+ color: white;
+ border-radius: 5px;
+}
+.arrowRight {
+ position: absolute;
+ font-size: 20px;
+
+ right: 0;
+ top: 50%;
+ background-color: rgba(0, 0, 0, 0.8) ;
+
+ color:white; 
+ border-radius: 5px;
+
+}

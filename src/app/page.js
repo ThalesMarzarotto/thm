@@ -6,208 +6,172 @@ import { useEffect } from "react";
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
+import NavBar from "../../component/NavBar";
+import { CoWorkerIcon, DevFocusIcon, InboxCleanup, SecurityIcon, SpotLight, SpotLight1, SpotLight2 } from "../../component/Icons";
+import Tower from "../../component/Tower";
+import useThemeSwitcher from "../../component/hooks/useThemeSwitcher";
+
 export default function Home() {
 
-  function sleepms(ms) {  
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  useEffect(() => {
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
-    window.addEventListener('resize', function () {
-      camera.aspect = window.innerWidth / window.innerHeight;  
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    }, false);
-
-    const scene = new THREE.Scene();
-    camera.position.z = 5;
-
-    
-    let lights = [];
-    lights[0] = new THREE.DirectionalLight(0xffffff, 3);
-    lights[1] = new THREE.DirectionalLight(0xffffff, 3);
-    lights[2] = new THREE.DirectionalLight(0xffffff, 3);
-    lights[0].position.set(0, 200, 0);
-    lights[1].position.set(100, 200, 100);
-    lights[2].position.set(-100, -200, -100);
-    scene.add(lights[0]);
-    scene.add(lights[1]);
-    scene.add(lights[2]);
-
-    const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-    const faceMaterial = new THREE.MeshPhongMaterial({ color: 0x156289, emissive: 0x072534, side: THREE.DoubleSide, flatShading: true });
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: false, opacity: 0.5 });
-
-    const bigLines = new THREE.Group();
-    const bigFaces = new THREE.Group();
-
-   
-
-    async function cameraMove() {
-      
-    
-      camera.position.z = -25;
-      camera.updateProjectionMatrix();
-    }
 
 
 
-    async function assemblyCubes() {
-      let started = false;
+ 
 
-      for (let k = 0; k < 10; k++) {
-        let y = k * 1.5;
-        if (k !== 0) {
-          await sleepms(200);
-          if (!started) {
-          
-            started = !started;
-          }
-        }
-
-        for (let i = 0; i < 5; i++) {
-          for (let j = 0; j < 10; j++) {
-           
-
-         if (j ===0 || j===9 ||   i===4 ||   k===0|| k===9 ) {
-           let x = -6.75 + 1.5 * j;
-            let z = 0.75 + 1.5 * i;
-
-            let newCube = new THREE.Group();
-           let line = new THREE.LineSegments(cubeGeometry, lineMaterial)
-           line.position.set(x,y,z)
-            bigLines.add(line);
-
-            let face = new THREE.Mesh(cubeGeometry, faceMaterial);
-            face.position.set(x, y, z);
-            bigFaces.add(face);
-
-            newCube.position.set(x, y, z);
-
-            let z2 = -0.75 - 1.5 * i;
-          
-
-         line = new THREE.LineSegments(cubeGeometry, lineMaterial)
-         line.position.set(x,y,z2)
-            bigLines.add(line);
-
-           face = new THREE.Mesh(cubeGeometry, faceMaterial);
-            face.position.set(x, y, z2);
-            bigFaces.add(face);
-            } 
-              
-           
-            if (k === 0) {
-              await sleepms(50);
-            }
-       
-
-
-          
-         
-          }
-        }
-      }
-
-
-      for(let j =0; j<3; j++ ){
-        await sleepms(150)
-      for(let i =0; i<2; i++ ){
-       
-        for(let k =0; k<2; k++ ){
-        await sleepms(50)
-      let cloneBigFaces = bigFaces.clone();
-      let cloneBigLines = bigLines.clone()
-      cloneBigFaces.translateX(-20*k);
-      cloneBigLines.translateX(-20*k);
-      cloneBigLines.translateZ(-20*i);
-      cloneBigFaces.translateZ(-20*i);
-      cloneBigLines.translateY(-20*j);
-      cloneBigFaces.translateY(-20*j);
-      scene.add(cloneBigLines)
-      scene.add(cloneBigFaces);
-  
-        }
-   
-   
-     
-
-
-
-    }
-      
-   
-      }
-
-
-
-
-
-
-    }
-
-    assemblyCubes();
-    camera.position.z = -50;
-
-
-    const cube1 = new THREE.Mesh(cubeGeometry, faceMaterial);
-    const cube2 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
-    const cube3 = new THREE.Mesh(cubeGeometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
-
-
-    let c_pos = 0
-
-
-   
-   
-    
-    scene.add(bigLines);
-    scene.add(bigFaces);
-    // startRotating()
-    cube1.position.set(0.75, 0, 0.75);
-    cube2.position.set(-0.75, 0, -0.75);
-    cube3.position.set(0.75, 0, -0.75);
-
-    scene.add(cube1);
-    scene.add(cube2);
-    scene.add(cube3);
-    
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
-
-    const controls = new OrbitControls(camera, renderer.domElement);
-    async function startRotating() {
-      for (let index = 0; index < 1000; index++) {
-        await sleepms(50);
-        // bigLines.rotateX(60)
-        c_pos+=0.5
-      
-        
-      }
-    }
-   startRotating()
-   camera.position.set(35, 35, 35)
-   controls.update()
-
-  controls.rotateSpeed = 0.3; // control the rotate speed
-  // controls.autoRotate = true
-  
-    function animate() {
-      requestAnimationFrame(animate);
-    
-
-      renderer.render(scene, camera);
-      controls.update();
-     
-    }
-
-    animate();
-  }, []);
 
   return (
-    <main className={styles.main}></main>
+    <main className={styles.main}>
+
+
+<div className={styles.heroSection}> 
+  <div className={styles.container}>
+      <p className={styles.subtitle}>Administracao</p>
+      <div className={styles.titleWrapper}>
+        <div className={styles.title}>
+          <div className={styles.titleText}>
+            <div>
+              <span className={`${styles.darkText} ${styles.animated}`}>Administrando </span>
+              <span className={`${styles.darkText} ${styles.animated}`}>em </span>
+              <span className={`${styles.whiteText} ${styles.animated}`}>Alto </span>
+              <span className={`${styles.darkText} ${styles.animated}`}>nivel </span>
+              <span className={`${styles.darkText} ${styles.animated}`}> para&nbsp;</span>
+              <span className={`${styles.darkText} ${styles.animated}`}>nossos  </span>
+              <span className={`${styles.whiteText} ${styles.animated}`}>Clientes </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p className={styles.description}>THM Administração: há 20 anos fazendo no mercado</p>
+   
+        <button className={styles.button}>
+          <span className={styles.buttonBackground}></span>
+          <span className={styles.buttonContent}>
+            Conheca os nossos trabalhos
+            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"></path>
+            </svg>
+          </span>
+        </button>
+   
+    </div>
+
+<div className={styles.mask}>
+
+</div>
+
+ 
+<SpotLight className={styles.SpotLight}/>
+<SpotLight1 className={styles.SpotLight1}/>
+<SpotLight2 className={styles.SpotLight2}/>
+
+</div>
+
+
+<div className={styles.heroSection3}>
+ 
+ <div className={styles.heroSection3Text}>
+  Todo trabalho é composto de partes
+ </div>
+</div>
+
+
+
+<div className={styles.divisor}>As nossas estao aqui</div>
+
+<div className={styles.heroSection2}>
+
+
+
+<div className={styles.try1}>
+      <div className={styles.try1IconWrapper}>
+      <InboxCleanup/>
+
+      </div>
+      <div className={styles.tryText}> 
+      <p className={styles.tryTitle}>Comunicação</p> 
+        
+        O cliente em primeiro lugar.
+        <p>Administração é algo <span className={styles.whiteText}>complexo</span> e não economizamos nessa etapa.</p>
+        
+        
+      
+      </div>
+  </div>
+  <div className={styles.try1}>
+    <div className={styles.try1IconWrapper}>
+        <SecurityIcon/>
+
+        </div>
+        <div className={styles.tryText}> 
+        <p className={styles.tryTitle}>Transparência</p> 
+          
+          Conversamos com os proprietários e representantes sempre.
+          <p>Democraticamente, buscamos as <span className={styles.whiteText}>melhores</span> soluções.</p>
+          
+          
+        
+        </div>
+  </div>
+  <div className={styles.try1}>
+    <div className={styles.try1IconWrapper}>
+    <DevFocusIcon/>
+
+        </div>
+        <div className={styles.tryText}> 
+        <p className={styles.tryTitle}>Trabalho Duro</p> 
+          
+<p>Focamos em realizar o trabalho no prazo estipulado.</p>
+
+          
+        
+        </div>
+  </div>
+  
+
+
+  
+</div>
+
+<div className={styles.divisor2}>Alguns <span className={styles.whiteText}>comentários</span> de nossos clientes</div>
+
+
+<div className={styles.testimonialsWrapper}>
+<div className={styles.testimonials}> 
+
+  <div className={styles.content}> 
+    
+  "Ótima empresa, competente há muitos anos no mercado, com muita experiência, resolvem os problemas se forem solicitados, eu vejo alguns comentários negativos, mas principalmente de pessoas que não sabem como funciona a área de administração e estão com problemas estruturais em seus prédios, que nada tem relação com administração"
+
+  
+   
+  </div>
+  <div className={styles.content}> 
+  "Ótima empresa, excelente trabalho e atendimento, prestativos e organizados"
+  
+   
+  </div>
+  <div className={styles.content}> 
+  "Administradora habilidosa em resolver probelmas, prestativa e idônea."
+  
+   
+  </div>
+  <div className={styles.content}> 
+    
+  "Ótima empresa, competente há muitos anos no mercado, com muita experiência, resolvem os problemas se forem solicitados, eu vejo alguns comentários negativos, mas principalmente de pessoas que não sabem como funciona a área de administração e estão com problemas estruturais em seus prédios, que nada tem relação com administração"
+  
+    
+     
+    </div>
+
+</div>
+</div>
+
+
+
+    <div id="test" style={{width:"500px", height:"600px"}}> 
+    hi
+    </div>
+
+    </main>
   );
 }

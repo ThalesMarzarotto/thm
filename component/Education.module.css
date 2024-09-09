@@ -1,0 +1,116 @@
+.my_custom_class {
+    margin-top: 2rem; /* Adjust as needed */
+    margin-bottom: 2rem; /* Adjust as needed */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    height: fit-content;
+  }
+  
+  .my_custom_class:first-child {
+    margin-top: 0;
+  }
+  
+  .my_custom_class:last-child {
+    margin-bottom: 0;
+  }
+
+.roundedWrapper {
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+    background-color: var(--text-color);
+    width: 5px;
+
+}
+
+.rounded {
+    height: 1em;
+    border-radius: 100%;
+    background-color: black;
+}
+
+.detailWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  width: 100%;
+}
+
+
+.main {
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: left;
+}
+
+.root{
+  margin-top: 4rem; /* 64 * 0.25rem = 16rem, ou seja, 64px em Tailwind */
+  margin-bottom: 4rem; /* 64 * 0.25rem = 16rem, ou seja, 64px em Tailwind */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 45px; /* 8xl em Tailwind é aproximadamente 5rem */
+
+  background-color: var(--bg-color);
+  color:var(--text-color);
+}
+
+.root2{
+  width: 100%;
+  font-weight: bold;
+  margin-top: 2rem; /* 32 * 0.25rem = 8rem, ou seja, 32px em Tailwind */
+  text-align: center;
+  border-bottom: 2px solid white;
+  font-size: 4rem;
+  line-height:normal;
+}
+
+
+.list{
+  margin-top: 20px;
+}
+
+.detailInfo{
+  text-transform: capitalize;
+  font-size: 1.5rem; /* 2xl em Tailwind é aproximadamente 1.5rem */
+  color: var(--text-color)
+}
+
+.detailInfoPlus{
+  font-size: 1.5rem; /* text-2xl em Tailwind é aproximadamente 1.5rem */
+  width: 100%; /* w-full em Tailwind é 100% */
+}
+.infoType{
+  font-weight: bold;
+  font-size: 1.875rem; 
+
+}
+
+
+
+
+@media(max-width:404px) {
+  
+  .root2{
+   font-size: 3rem;
+  }
+
+
+  .my_custom_class {
+ 
+    width: 98%;
+    
+  }
+
+}
+

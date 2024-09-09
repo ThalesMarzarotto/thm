@@ -1,0 +1,126 @@
+.strange{
+    display: inline-block;
+    position: relative; /* O valor padrão para `z-index` quando não é especificado é auto, mas `relative` é geralmente necessário para manipular `z-index`. */
+    z-index: 0;
+    padding: 4rem; /* 32 * 0.25rem = 8rem */
+    width: 100%; /* -full é convertido para 100% */
+    height: 100%; /* -full é convertido para 100% */
+    display: flex; /* Presumido com base na sua classe `lg:flex-col` */
+    flex-direction: row; /* Valor padrão para flex-direction */
+   
+    justify-content: center;
+}
+
+.main{
+    width: 100%; /* w-full */
+    border-top: 2px solid rgb(2, 2, 2); /* border-t-2 border-solid border-white */
+    font-weight: 500; /* font-medium */
+    color: var(--text-color); 
+    background-color: var(--bg-color); /* Substitua pela cor desejada para bg-light */
+    font-size: 1.125rem; 
+}
+
+.mainGrid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* grid-cols-6 */
+    gap: 0.5rem; 
+}
+
+.initialInfo{
+    grid-column: span 2; /* col-span-2 */
+    display: flex; /* flex */
+    flex-direction: column; /* flex-col */
+    align-items: flex-start; /* items-start */
+}
+
+.contactInfoContainer{
+    grid-column: span 2; /* col-span-2 */
+    display: flex; /* flex */
+    flex-direction: column; /* flex-col */
+    align-items: center; /* items-center */
+}
+
+.contactNumber{
+    display: flex;
+    flex-direction: column;
+}
+.contactNumber{
+    display: flex;
+    flex-direction: column;
+}
+
+.logoContainer{
+    margin-top: 5rem; /* mt-20 em Tailwind é aproximadamente 5rem */
+    grid-column: span 2; /* col-span-2 */
+    display: flex; /* flex */
+    flex-direction: column; /* flex-col */
+    align-items: center; /* items-center */
+}
+
+.thales{
+    margin-top: 8rem; /* mt-32 em Tailwind é aproximadamente 8rem */
+    display: flex; /* flex */
+    flex-direction: row; /* flex-row */
+    justify-content: center; /* justify-center */
+    align-items: center; /* items-center */}
+
+
+.logo{
+    width: 15%; /* w-[15%] */
+    fill: var(--text-color); /* fill-dark */
+}
+
+
+.council{
+    
+        border-radius: 10px; /* rounded-[10px] */
+      
+}
+
+.title{
+    
+        font-size: 1.5rem; /* text-2xl */
+        font-weight: bold; /* font-bold */
+    
+      
+}
+
+.majorattribute{
+    font-size: 1.25rem; /* text-1xl em Tailwind é aproximadamente 1.25rem */
+    font-weight: 500; /* font-medium */
+}
+
+.attributeCredential {
+    
+        font-size: 1.25rem; /* text-1xl em Tailwind é aproximadamente 1.25rem */
+        font-weight: 500; /* font-medium */
+    
+      
+}
+.contactInfo{
+    display: flex; /* flex */
+    flex-direction: column; /* flex-col */
+    align-items: flex-start; /* items-start */
+}
+
+@media (min-width: 768px) {
+    .contactInfoContainer{
+      grid-column: span 3; /* md:col-span-3 */
+    }
+    .initialInfo{
+      grid-column: span 3; /* md:col-span-3 */
+    }
+    .logoContainer{
+      grid-column: span 6; 
+    }
+  }
+  
+  /* Para telas pequenas (sm) */
+  @media (max-width: 639px) {
+    .initialInfo{
+      grid-column: span 6; /* sm:col-span-6 */
+    }
+    .contactInfoContainer{
+      grid-column: span 6; /* sm:col-span-6 */
+    }
+  }
