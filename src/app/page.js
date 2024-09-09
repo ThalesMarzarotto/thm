@@ -149,24 +149,24 @@ export default function Home() {
 
   <div className={styles.content}> 
     
-  "Ótima empresa, competente há muitos anos no mercado, com muita experiência, resolvem os problemas se forem solicitados, eu vejo alguns comentários negativos, mas principalmente de pessoas que não sabem como funciona a área de administração e estão com problemas estruturais em seus prédios, que nada tem relação com administração"
+  Ótima empresa, competente há muitos anos no mercado, com muita experiência, resolvem os problemas se forem solicitados, eu vejo alguns comentários negativos, mas principalmente de pessoas que não sabem como funciona a área de administração e estão com problemas estruturais em seus prédios, que nada tem relação com administração
 
   
    
   </div>
   <div className={styles.content}> 
-  "Ótima empresa, excelente trabalho e atendimento, prestativos e organizados"
+  Ótima empresa, excelente trabalho e atendimento, prestativos e organizados
   
    
   </div>
   <div className={styles.content}> 
-  "Administradora habilidosa em resolver probelmas, prestativa e idônea."
+  Administradora habilidosa em resolver probelmas, prestativa e idônea.
   
    
   </div>
   <div className={styles.content}> 
     
-  "Ótima empresa, competente há muitos anos no mercado, com muita experiência, resolvem os problemas se forem solicitados, eu vejo alguns comentários negativos, mas principalmente de pessoas que não sabem como funciona a área de administração e estão com problemas estruturais em seus prédios, que nada tem relação com administração"
+  Ótima empresa, competente há muitos anos no mercado, com muita experiência, resolvem os problemas se forem solicitados, eu vejo alguns comentários negativos, mas principalmente de pessoas que não sabem como funciona a área de administração e estão com problemas estruturais em seus prédios, que nada tem relação com administração
   
     
      
