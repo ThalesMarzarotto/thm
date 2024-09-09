@@ -38,18 +38,17 @@ function NavBar() {
         
 
 
-      { isOpen? 
+       
       <div className={styles.menuControler} onClick={handleClick}>
-         <CloseIcon></CloseIcon>
+        { isOpen?
+         <CloseIcon></CloseIcon> :<BarsIcon></BarsIcon> }
       </div>
 
-      :
-      <div className={styles.menuControler} onClick={handleClick}>  
-      <BarsIcon></BarsIcon>
-      </div>
+     
+      
         
         
-        }
+       
    
 
 
