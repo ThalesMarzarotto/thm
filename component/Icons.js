@@ -698,8 +698,8 @@ export const ArrowRight = (props) => (
 export const BarsIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="100%"
+    width="30px"
+    height="30px"
     fill="currentColor"
     stroke="currentColor"
     strokeWidth={0}
@@ -721,8 +721,8 @@ export const BarsIcon = (props) => (
 export const CloseIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    height="100%"
+    width="30px"
+    height="30px"
     fill="currentColor"
     stroke="currentColor"
     strokeWidth={0}
