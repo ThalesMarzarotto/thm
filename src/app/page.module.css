@@ -249,14 +249,14 @@ background-color: var(--bg-color);
 .heroSection2 {
   display: grid;
   width: 80%;
-  height:  100vh;
+  height:  fit-content;
   row-gap: 2em;
 
   column-gap: 2em;
   background-color: var(--bg-color);
   grid-template-columns: 1fr ;
   grid-template-rows: 1fr 1fr 1fr;
-  padding-bottom: 50px;
+  padding-bottom: 50px  ;
 
 }
 
