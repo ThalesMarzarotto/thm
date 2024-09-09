@@ -1,7 +1,7 @@
 "use client"
-import React, { useEffect, useState } from 'react'
-import { usePathname, useRouter} from 'next/navigation'
-import {TwitterIcon,  InstagramIcon, WhatsAppIcon, LinkedInIcon, SunIcon, MoonIcon, CloseIcon, BarsIcon}from './Icons'
+import React, { useState } from 'react'
+import {  useRouter} from 'next/navigation'
+import { WhatsAppIcon, SunIcon, MoonIcon, CloseIcon, BarsIcon}from './Icons'
 import styles from "./navbar.module.css"
 import useThemeSwitcher from './hooks/useThemeSwitcher'
 
