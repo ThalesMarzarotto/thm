@@ -109,7 +109,7 @@ background-color: red
     color: var(--text-color);
     display: none;
     position: absolute;
-    right: 0;
+    left: 0;
     padding-right: 10px;
 }
 
