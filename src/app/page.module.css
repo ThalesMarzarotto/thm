@@ -430,13 +430,14 @@ margin-bottom: 10px;
 }
 .cardContent2 {
   position: absolute;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 99;
   width: 100%;
   top: 50%;
 
+  visibility: hidden;
   transform: translateY(-50%
   );
   color: black;
@@ -506,7 +507,7 @@ margin-bottom: 10px;
   display: none;
 }
 .cardWrapper:hover>.cardContent2{
-  display: flex;
+  visibility: visible;
   
 }
 
