@@ -53,7 +53,7 @@ function NavBar() {
    
 
 
-    <div className={styles.computerMenu}>
+    {/* <div className={styles.computerMenu}>
     <nav className={styles.computerMenuWrapper}>
       <div className={styles.computerMenuOption} onClick={()=>routeAndClose("/")}>
         Home
@@ -92,7 +92,7 @@ function NavBar() {
     </nav>
 
 
-    </div>
+    </div> */}
 
 
     {(isOpen ? 
