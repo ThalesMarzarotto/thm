@@ -27,6 +27,10 @@ function NavBar() {
     }
 
 
+    function scrollTo(ele){
+         document.getElementById(ele).scrollIntoView({behavior:"smooth"})
+         setIsOpen(!isOpen)
+    }
 
 
   return (
@@ -54,21 +58,22 @@ function NavBar() {
       <div className={styles.computerMenuOption} onClick={()=>routeAndClose("/")}>
         Home
         </div>
-        <div className={styles.computerMenuOption} onClick={()=>routeAndClose("/locais")}>
+        <div className={styles.computerMenuOption} onClick={()=>scrollTo("services")}>
         Sobre 
-        </div>
-        <div className={styles.computerMenuOption} onClick={()=>routeAndClose("/info")}>
-        Orcamentos
-        </div>
-        <div className={styles.computerMenuOption} onClick={()=>routeAndClose("/info")}>
+        </div>       
+        <a href={"https://portal.thmcondominios.com.br/#/login"} className={styles.computerMenuOption} onClick={()=>routeAndClose("/info")}>
         Portal
-        </div>
+        </a>
+        <div className={styles.computerMenuOption} onClick={()=>scrollTo("contatos")}>
+        Contato
+        </div>   
+        <a href={"https://portal.thmcondominios.com.br/#/login"} className={styles.computerMenuOption} onClick={()=>routeAndClose("/locais")}>
+        2ª Via de Boleto
+        </a> 
      </nav> 
     
    <nav className={styles.computerMenuWrapper}>
-   <a href={'https://www.instagram.com/dredujorgens/'}  className={styles.mobileMenuIcon}      >
-           <InstagramIcon/>       
-        </a>
+
         <a href={'https://api.whatsapp.com/send?phone=555191999640&text=%22Ol%C3%A1,%20gostaria%20de%20saber%20mais%22'} className={styles.mobileMenuIcon}  >
           	<WhatsAppIcon/>
         </a>
@@ -105,20 +110,24 @@ function NavBar() {
         <div className={styles.mobileMenuOption} onClick={()=>routeAndClose("/")}>
         Home
         </div>
-        <div className={styles.mobileMenuOption} onClick={()=>routeAndClose("/locais")}>
-        Locais de Atendimento
+        <div className={styles.mobileMenuOption} onClick={()=>scrollTo("services")}>
+        Sobre
         </div>
-        <div className={styles.mobileMenuOption} onClick={()=>routeAndClose("/info")}>
-        Info
+        <a href={"https://portal.thmcondominios.com.br/#/login"} className={styles.mobileMenuOption} onClick={()=>routeAndClose("/info")}>
+        Portal
+        </a>
+        <div className={styles.mobileMenuOption} onClick={()=>scrollTo("contatos")}>
+        Contato
         </div>
+        <a href={"https://portal.thmcondominios.com.br/#/login"} className={styles.mobileMenuOption}>
+         2ª Via de Boleto
+        </a>
    
       
      </nav> 
     
    <nav className={styles.mobileMenuWrapper1}>
-        <a href={'https://www.instagram.com/dredujorgens/'}  className={styles.mobileMenuIcon}      >
-           <InstagramIcon/>       
-        </a>
+      
         <a href={'https://api.whatsapp.com/send?phone=555191999640&text=%22Ol%C3%A1,%20gostaria%20de%20saber%20mais%22'} className={styles.mobileMenuIcon}  >
           	<WhatsAppIcon/>
         </a>

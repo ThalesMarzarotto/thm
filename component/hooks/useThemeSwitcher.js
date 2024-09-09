@@ -4,8 +4,8 @@ import Tower from '../Tower'
 import Aceternity from '../Aceternity'
 
 
-let aceternity = new Aceternity()
- let tower= new Tower()
+
+let tower= new Tower()
 function useThemeSwitcher(arg) {
          
     
@@ -16,9 +16,7 @@ function useThemeSwitcher(arg) {
 
 
 
-aceternity.updateWindow(window,document)
 
-aceternity.init()
               tower.updateWindow(window, document)
               tower.resize()
               tower.init()

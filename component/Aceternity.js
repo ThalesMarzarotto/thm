@@ -24,20 +24,29 @@ float random (vec2 st) {
 void main() {
   vec2 st = gl_FragCoord.xy/fboSize.xy;
   float tick1;
-    st *= 250.0; // Scale the coordinate system by 10
+  vec3 color;
+
+    st *= 200.0; // Scale the coordinate system by 10
     vec2 ipos = floor(st);  // get the integer coords
     vec2 fpos = fract(st);  // get the fractional coords
 
     // Assign a random value based on the integer coord
-  
-    vec3 color = vec3(random( ipos*tick ));
-     float y = step(0.5,color.x);
-    // Uncomment to see the subdivided grid
-     color = vec3(y);
+    vec2 module = mod(ipos,2.0);
+    if(module.y == 0.0 || module.x ==0.0) {
+    color = vec3(0.0);
 
-    gl_FragColor = vec4(color,1.0);
+    }  
+     
+    else {
+     color = vec3(random( ipos*tick ));
+      float y = step(0.5,color.x);
+      color = vec3(y);
+    }
+    
+
+      
  
-   
+   gl_FragColor = vec4(color,1.0);
 
 
 }
@@ -64,22 +73,22 @@ void main(){
 export default class  Aceternity{
 
 
-    constructor(window,document){
-      
+    constructor(window,document, tgt){
+      this.window = window, 
+      this.document = document
+      this.window = window
+      this.document = document
+      this.renderer = new THREE.WebGLRenderer();
+      this.camera = new THREE.Camera();
+      this.scene= new THREE.Scene()
+      this.tgt = this.document.getElementById(tgt);
         
         
     }
 
 
     updateWindow ( window, document) {
-        this.window = window, 
-        this.document = document
-        this.window = window
-        this.document = document
-        this.renderer = new THREE.WebGLRenderer();
-        this.camera = new THREE.Camera();
-        this.scene= new THREE.Scene()
-        this.tgt = this.document.getElementById("test");
+       
     }
 
     changeTheme(theme) {
@@ -108,7 +117,7 @@ export default class  Aceternity{
     init(){
         
         this.renderer.setSize(this.tgt.clientWidth, this.tgt.clientHeight);
-        this.document.getElementById("test").appendChild(this.renderer.domElement)
+        this.tgt.appendChild(this.renderer.domElement)
       this.clock = new THREE.Clock()
       this.delta = 0 
         this.plane = new THREE.PlaneGeometry(2.0,2.0)
@@ -142,14 +151,14 @@ export default class  Aceternity{
      animate() {
           requestAnimationFrame(this.animate.bind(this))
           this.renderer.render(this.scene, this.camera);         
-          this.clock.getElapsedTime()
-          console.log(this.clock.getElapsedTime());
+        
           
      
-            if(this.clock.getElapsedTime()-this.delta>0.216){
+            if(this.clock.getElapsedTime()-this.delta>.350){
                 this.delta  = this.clock.getElapsedTime()
                  this.material.uniforms.tick.value = Math.random()
               
+                // console.log(this.material.uniforms.tick.value);
                 
             }
             

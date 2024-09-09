@@ -7,16 +7,25 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import NavBar from "../../component/NavBar";
-import { CoWorkerIcon, DevFocusIcon, InboxCleanup, SecurityIcon, SpotLight, SpotLight1, SpotLight2 } from "../../component/Icons";
+import { CloseIcon, CoWorkerIcon, DevFocusIcon, Engineer, EngineerIcon, GroupBuildingIcon, InboxCleanup, PredialIcon, SecurityIcon, SpotLight, SpotLight1, SpotLight2 } from "../../component/Icons";
 import Tower from "../../component/Tower";
 import useThemeSwitcher from "../../component/hooks/useThemeSwitcher";
+import Aceternity from "../../component/Aceternity";
 
 export default function Home() {
 
 
+  useEffect(()=>{
+    let aceternity1 = new Aceternity(window,document, "test")
+    aceternity1.init()
+    let aceternity2 = new Aceternity(window,document, "test2")
+    aceternity2.init()
+    let aceternity3 = new Aceternity(window,document, "test3")
+    aceternity3.init()
 
 
- 
+  }, [])
+
 
 
   return (
@@ -25,7 +34,7 @@ export default function Home() {
 
 <div className={styles.heroSection}> 
   <div className={styles.container}>
-      <p className={styles.subtitle}>Administracao</p>
+      <p className={styles.subtitle}>Administração</p>
       <div className={styles.titleWrapper}>
         <div className={styles.title}>
           <div className={styles.titleText}>
@@ -41,9 +50,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <p className={styles.description}>THM Administração: há 20 anos fazendo no mercado</p>
+      <p className={styles.description}>THM Administração desde 2001</p>
    
-        <button className={styles.button}>
+        <a className={styles.button}>
           <span className={styles.buttonBackground}></span>
           <span className={styles.buttonContent}>
             Conheca os nossos trabalhos
@@ -51,7 +60,7 @@ export default function Home() {
               <path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"></path>
             </svg>
           </span>
-        </button>
+        </a>
    
     </div>
 
@@ -76,7 +85,7 @@ export default function Home() {
 
 
 
-<div className={styles.divisor}>As nossas estao aqui</div>
+<div className={styles.titleWrapper}>As nossas estão aqui</div>
 
 <div className={styles.heroSection2}>
 
@@ -165,13 +174,155 @@ export default function Home() {
 
 </div>
 </div>
+<div className={styles.titleWrapper}>
+  Como você pode acessar os nossos serviços?
+</div>
+
+<div className={styles.heroSection4}> 
 
 
 
-    <div id="test" style={{width:"500px", height:"600px"}}> 
-    hi
+  <div className={styles.cardWrapper}> 
+        
+      <div className={styles.cardContent}> 
+       
+        <div className={styles.preText1}> 
+          Fase 1
+        </div>
+      </div>
+      <div className={styles.cardContent2}> 
+       
+        <div className={styles.preText}> 
+         Primeiro ouvimos o seu pedido
+        </div>
+      </div>
+      <div  id="test" className={styles.cardColor}>
+
+      </div>
+      <div className={styles.cardColor1}>
+    
+      </div>
+
+      <div className={styles.cardDown}>
+
+      </div>
+      <div className={styles.cardUp}>
+
+      </div>
+  </div>
+  <div className={styles.cardWrapper}> 
+        
+        <div className={styles.cardContent}> 
+         
+          <div className={styles.preText1}> 
+            Fase 2
+          </div>
+        </div>
+        <div className={styles.cardContent2}> 
+         
+          <div className={styles.preText}> 
+           Solicitamos mais informações pra você, localização do imóvel, informações sobre a construção, número de apartamentos
+          </div>
+        </div>
+        <div  id="test2" className={styles.cardColor}>
+  
+        </div>
+        <div className={styles.cardColor2}>
+      
+        </div>
+  
+        <div className={styles.cardDown}>
+  
+        </div>
+        <div className={styles.cardUp}>
+  
+        </div>
+    </div> <div className={styles.cardWrapper}> 
+        
+        <div className={styles.cardContent}> 
+         
+          <div className={styles.preText1}> 
+            Fase 3
+          </div>
+        </div>
+        <div className={styles.cardContent2}> 
+         
+          <div className={styles.preText}> 
+           Fornecemos uma proposta orçamentária
+          </div>
+        </div>
+        <div  id="test3" className={styles.cardColor}>
+  
+        </div>
+        <div className={styles.cardColor3}>
+      
+        </div>
+  
+        <div className={styles.cardDown}>
+  
+        </div>
+        <div className={styles.cardUp}>
+  
+        </div>
     </div>
+</div>
 
+<div id="services" className={styles.titleWrapper}>Nossos serviços</div>
+<div className={styles.heroSection2}>
+
+
+
+<div className={styles.try1}>
+      <div className={styles.try1IconWrapper}>
+      <PredialIcon/>
+
+      </div>
+      <div className={styles.tryText}> 
+      <p className={styles.tryTitle}>Administração</p> 
+        
+       Administramos imóveis e conjuntos de imóveis
+       
+        
+        
+      
+      </div>
+  </div>
+  <div className={styles.try1}>
+    <div className={styles.try1IconWrapper}>
+        <GroupBuildingIcon/>
+
+        </div>
+        <div className={styles.tryText}> 
+        <p className={styles.tryTitle}>Compra e Venda de Imóveis</p> 
+          
+          Mercado Imobiliário
+         
+          
+          
+        
+        </div>
+  </div>
+  <div className={styles.try1}>
+    <div className={styles.try1IconWrapper}>
+    <EngineerIcon/>
+
+        </div>
+        <div className={styles.tryText}> 
+        <p className={styles.tryTitle}>Obras de Construção civil</p> 
+          
+<p>Fiscalização, realização e projetos</p>
+
+          
+        
+        </div>
+  </div>
+  
+
+
+  
+</div>
+
+ 
     </main>
   );
 }
