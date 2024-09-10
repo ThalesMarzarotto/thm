@@ -34,7 +34,6 @@ export default function Home() {
 
 <div className={styles.heroSection}> 
   <div className={styles.container}>
-      <p className={styles.subtitle}>Administração</p>
       <div className={styles.titleWrapper}>
         <div className={styles.title}>
           <div className={styles.titleText}>
@@ -50,7 +49,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <p className={styles.description}>THM Administração desde 2001</p>
+      <p className={styles.thm}>
+      THM
+      </p>
+      <p className={styles.description}> Administração desde 2001</p>
    
         <a className={styles.button}>
           <span className={styles.buttonBackground}></span>
