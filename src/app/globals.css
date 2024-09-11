@@ -14,7 +14,7 @@
 
 
 :root{
-    --dark:#020617;
+    --dark:#0a174b;
     --bg-color:white;
     --text-color:#020617;
     --font-family: mont;
@@ -22,7 +22,7 @@
 }
 
 [data-theme="dark"] {
-    --bg-color:  #020617;
+    --bg-color:  #0a174b;
     
     --text-color:white; 
 }
