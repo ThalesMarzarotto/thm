@@ -52,7 +52,7 @@ export default function Home() {
       <p className={styles.thm}>
       THM
       </p>
-      <p className={styles.description}> Administração desde 2001</p>
+      <p className={styles.description}> Administração desde 1999</p>
    
         <a className={styles.button}>
           <span className={styles.buttonBackground}></span>
