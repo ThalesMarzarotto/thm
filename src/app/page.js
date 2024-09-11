@@ -79,7 +79,9 @@ export default function Home() {
 
 
 <div className={styles.heroSection3}>
- 
+<SpotLight className={styles.SpotLight}/>
+<SpotLight1 className={styles.SpotLight1}/>
+<SpotLight2 className={styles.SpotLight2}/>
  <div className={styles.heroSection3Text}>
   Todo trabalho é composto de partes
  </div>
@@ -91,7 +93,9 @@ export default function Home() {
 
 <div className={styles.heroSection2}>
 
-
+<SpotLight className={styles.SpotLight}/>
+<SpotLight1 className={styles.SpotLight1}/>
+<SpotLight2 className={styles.SpotLight2}/>
 
 <div className={styles.try1}>
       <div className={styles.try1IconWrapper}>
@@ -182,7 +186,9 @@ export default function Home() {
 
 <div className={styles.heroSection4}> 
 
-
+<SpotLight className={styles.SpotLight}/>
+<SpotLight1 className={styles.SpotLight1}/>
+<SpotLight2 className={styles.SpotLight2}/>
 
   <div className={styles.cardWrapper}> 
         
@@ -271,7 +277,9 @@ export default function Home() {
 
 <div id="services" className={styles.titleWrapper}>Nossos serviços</div>
 <div className={styles.heroSection2}>
-
+<SpotLight className={styles.SpotLight}/>
+<SpotLight1 className={styles.SpotLight1}/>
+<SpotLight2 className={styles.SpotLight2}/>
 
 
 <div className={styles.try1}>

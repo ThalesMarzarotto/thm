@@ -258,7 +258,7 @@ background-color: var(--bg-color);
   width: 80%;
   height:  fit-content;
   row-gap: 2em;
-
+position: relative;
   column-gap: 2em;
   background-color: var(--bg-color);
   grid-template-columns: 1fr ;
@@ -390,6 +390,7 @@ overflow: hidden;
 
 .heroSection4{
   width: 100%;
+  position: relative;
   height: 100vh;
   display: flex;
   justify-content: space-evenly;
