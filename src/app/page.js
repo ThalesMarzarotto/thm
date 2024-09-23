@@ -103,7 +103,7 @@ export default function Home() {
 
       </div>
       <div className={styles.tryText}> 
-      <p className={styles.tryTitle}>Comunicação</p> 
+      <p className={styles.tryTitle}>ção</p> 
         
         O cliente em primeiro lugar.
         <p>Administração é algo <span className={styles.whiteText}>complexo</span> e não economizamos nessa etapa.</p>
@@ -166,7 +166,7 @@ export default function Home() {
    
   </div>
   <div className={styles.content}> 
-  Administradora habilidosa em resolver probelmas, prestativa e idônea.
+  Administradora habilidosa em resolver problemas, prestativa e idônea.
   
    
   </div>
