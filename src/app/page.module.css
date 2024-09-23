@@ -137,8 +137,9 @@ background-color: var(--bg-color);
 
 .button {
   position: relative;
-  display: inline-flex;
-  height: 3rem; /* h-12 */
+  display: flex;
+  flex-direction: column;
+  height: fit-content; /* h-12 */
   width: 100%; /* w-full */
   margin-top: 2.5rem; /* md:mt-10 */
   overflow: hidden;
@@ -150,7 +151,8 @@ background-color: var(--bg-color);
 
 @media (min-width: 768px) {
   .button {
-    width: 15rem; md:w-60
+    width: 15rem; 
+
   }
 }
 
@@ -162,12 +164,16 @@ background-color: var(--bg-color);
 }
 
 .buttonContent {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
   height: 100%;
   width: 100%;
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
+ 
   border-radius: 5px;
   background-color: #020617; /* bg-slate-950 */
   
@@ -275,7 +281,7 @@ position: relative;
  font-size: var(--title);
 justify-content: center;
 align-items: center;
- border: 1px solid #292929;
+ border: 1px solid var(--text-color);
  border-radius: 5px;
  background-color:  var(--bg-color);
  color: var(--text-color)
