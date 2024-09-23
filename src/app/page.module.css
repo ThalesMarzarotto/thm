@@ -328,7 +328,7 @@ align-items: center;
 overflow: hidden;
   display: flex;
  position: relative;
- height: 30vh;
+ height: 50vh;
  width: 100%;
 }
 
@@ -339,7 +339,8 @@ overflow: hidden;
   display: flex;
   position: absolute;
   flex-direction: row;
-  height: 20vh;
+  height: fit-content;
+  
   animation: scroll 20s linear infinite;
   background-color: var(--bg-color);
 
@@ -350,6 +351,7 @@ overflow: hidden;
   height: 100%;
   display: flex;
   font-size:  15px;
+  padding: 20px;
   width: 60vw;
   font-style: italic;
   text-align: center;

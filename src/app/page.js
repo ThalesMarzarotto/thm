@@ -54,7 +54,7 @@ export default function Home() {
       </p>
       <p className={styles.description}> Administração desde 1999</p>
    
-        <a className={styles.button}>
+        <a href="api.whatsapp.com/send?phone=4991072689" className={styles.button}>
           <span className={styles.buttonBackground}></span>
           <span className={styles.buttonContent}>
             Conheca os nossos trabalhos
@@ -320,7 +320,7 @@ export default function Home() {
         <div className={styles.tryText}> 
         <p className={styles.tryTitle}>Obras de Construção civil</p> 
           
-<p>Fiscalização, realização e projetos</p>
+<p>Fiscalização, realização, projetos, NBRs e perícias técnicas</p>
 
           
         

@@ -12,7 +12,7 @@ function Footer() {
       <div></div>
       
       <div className={styles.enderecos}> 
-      <div className={styles.title}> Endereços</div>
+      <div className={styles.title}> Endereço Matriz</div>
 
       Rua Mal. Floriano Peixoto, 240L, Sala 33, Shopping Itajoara, Centro, Chapecó/SC
 
@@ -25,21 +25,14 @@ function Footer() {
       <div id='contatos' className={styles.title}> Contatos</div>
       <p>recepcaothm@gmail.com
   </p>
-<p>
-(49) 3323-0631
-</p>
-<p>
-(49) 3323-0681
-</p>
-<p>
-(49) 99107-3548
-</p>
-<p>
-(49) 99107-2689
-</p>
-<p>
-  (51) 99424-4306
-</p>
+<a className={styles.phoneNumber} href='api.whatsapp.com/send?phone=4991072689'>
+Chapecó, SC - (49) 9 9107 2689
+</a>
+
+
+<a className={styles.phoneNumber} href='api.whatsapp.com/send?phone=5194244306'>
+Porto Alegre, RS (51) 99424-4306
+</a>
 
 
 

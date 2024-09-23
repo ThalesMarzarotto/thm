@@ -50,3 +50,8 @@ align-items: center;
     width: 80%;
   }
 }
+
+.phoneNumber {
+  text-decoration: none;
+  color: var(--text-color);
+}

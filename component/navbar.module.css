@@ -92,8 +92,8 @@ color: var(--text-color);
 
 .mobileMenuIcon {
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 45px;
+    width: 45px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
